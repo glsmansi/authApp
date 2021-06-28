@@ -32,7 +32,7 @@ mongoose
   .catch((e) => console.log(e));
 
 const sessionConfig = {
-  secret: "thisshouldbeabettersecret",
+  secret: process.env.SECRET_KEY,
   //deprecations
   resave: false,
   saveUninitialized: true,
@@ -76,8 +76,8 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error", { err });
 });
 
-var server = app.listen(port, () => {
+app.listen(port, () => {
   console.log(`Listening at port ${port}`);
 });
 
-server.timeout = 240000;
+
