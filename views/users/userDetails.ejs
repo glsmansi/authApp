@@ -1,0 +1,41 @@
+<%-layout('layouts/boilerplate')%>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/userDetails.css" />
+    <title>Details</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Details</h1>
+      <div class="setting">
+        <label class="label" for="fname">First Name:</label>
+        <input type="text" id="fname" disabled placeholder="<%=user.fname%>" />
+      </div>
+      <div class="setting">
+        <label class="label" for="lname">Last Name:</label>
+        <input type="text" id="lname" disabled placeholder="<%=user.lname%>" />
+      </div>
+      <div class="setting">
+        <label class="label" for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          disabled
+          placeholder="<%=user.username%>"
+        />
+      </div>
+      <div class="setting">
+        <label class="label" for="email">Email:</label>
+        <input type="text" id="email" disabled placeholder="<%=user.email%>" />
+      </div>
+      <div class="setting">
+        <label class="label" for="phno">Phone Number:</label>
+        <input type="text" id="phno" disabled placeholder="<%=user.phno%>" />
+      </div>
+    </div>
+  </body>
+</html>
