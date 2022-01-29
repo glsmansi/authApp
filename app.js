@@ -22,11 +22,14 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+const dbUrl = process.env.DB_URL;
+
 mongoose
-  .connect(process.env.MONGOURL, {
-    useCreateIndex: true,
+  .connect(dbUrl, {
     useNewUrlParser: true,
+    useCreateIndex: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
   })
   .then(() => console.log("Mongodb connected"))
   .catch((e) => console.log(e));
